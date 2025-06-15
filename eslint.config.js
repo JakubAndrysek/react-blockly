@@ -24,7 +24,7 @@ export default [
         alert: 'readonly',
         clearTimeout: 'readonly',
         setTimeout: 'readonly',
-        
+
         // DOM types
         HTMLElement: 'readonly',
         HTMLDivElement: 'readonly',
@@ -38,17 +38,17 @@ export default [
     },
     rules: {
       // TypeScript rules
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['warn', {argsIgnorePattern: '^_'}],
       '@typescript-eslint/no-explicit-any': 'warn',
-      'no-unused-vars': 'off', // Use TypeScript version instead
-      'no-undef': 'off', // TypeScript handles this
-      
+      'no-unused-vars': 'off',  // Use TypeScript version instead
+      'no-undef': 'off',        // TypeScript handles this
+
       // React rules
-      'react/react-in-jsx-scope': 'off', // Not needed in React 17+
-      'react/prop-types': 'off', // Using TypeScript for prop validation
+      'react/react-in-jsx-scope': 'off',  // Not needed in React 17+
+      'react/prop-types': 'off',  // Using TypeScript for prop validation
       'react/jsx-uses-react': 'off',
       'react/jsx-uses-vars': 'error',
-      
+
       // React Hooks rules
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',

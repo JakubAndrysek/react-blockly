@@ -40,16 +40,26 @@ const TestEditor = () => {
     }, 2000);
 
     window.setTimeout(() => {
-      setToolboxConfiguration((prevConfig: ToolboxInfo) => ({
-        ...prevConfig,
-        contents: [
-          ...prevConfig.contents.slice(0, prevConfig.contents.length - 1),
-          {
-            ...prevConfig.contents[prevConfig.contents.length - 1],
-            contents: [{ kind: "block", type: "text" }],
-          },
-        ],
-      }));
+      setToolboxConfiguration((prevConfig: ToolboxInfo) => {
+        const {contents} = prevConfig;
+        const lastIndex = contents.length - 1;
+        const lastItem = contents[lastIndex];
+
+        if (!lastItem || lastIndex < 0) {
+          return prevConfig;
+        }
+
+        return {
+          ...prevConfig,
+          contents: [
+            ...contents.slice(0, lastIndex),
+            {
+              ...lastItem,
+              contents: [{ kind: "block", type: "text" }],
+            },
+          ],
+        };
+      });
     }, 4000);
 
     window.setTimeout(() => {
@@ -88,7 +98,7 @@ const TestEditor = () => {
     <>
       <div style={{ height: "600px", width: "800px" }}>
         <button
-          onClick={(e) =>
+          onClick={e =>
             setSerialState(
               (e.target as HTMLElement).innerText == "XML" ? "XML" : "JSON"
             )
