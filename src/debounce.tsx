@@ -5,10 +5,10 @@ export default function debounce<Args extends unknown[]>(
   let timeout: number | null = null;
   let later: (() => void) | null = null;
 
-  const debouncedFunction = (...args: Args) => {
+  const debouncedFunction = (..._args: Args) => {
     later = () => {
       timeout = null;
-      func(...args);
+      func(..._args);
     };
     if (timeout != null) {
       clearTimeout(timeout);

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import * as Blockly from "blockly/core";
 import { javascriptGenerator } from "blockly/javascript";
+import { WorkspaceSvg } from "blockly";
 
 import { BlocklyWorkspace } from "./index";
 import ConfigFiles from "./initContent/content";
@@ -61,7 +62,7 @@ const TestEditor = () => {
     }, 10000);
   }, []);
 
-  const onWorkspaceChange = React.useCallback((workspace) => {
+  const onWorkspaceChange = React.useCallback((workspace: WorkspaceSvg) => {
     workspace.registerButtonCallback("myFirstButtonPressed", () => {
       alert("button is pressed");
     });
@@ -75,11 +76,11 @@ const TestEditor = () => {
     setGeneratedCode(code);
   }, []);
 
-  const onXmlChange = React.useCallback((newXml) => {
+  const onXmlChange = React.useCallback((newXml: string) => {
     setGeneratedXml(newXml);
   }, []);
 
-  const onJsonChange = React.useCallback((newJson) => {
+  const onJsonChange = React.useCallback((newJson: object) => {
     setGeneratedJson(JSON.stringify(newJson));
   }, []);
   const [serialState, setSerialState] = useState<"XML" | "JSON">("XML");
@@ -131,8 +132,9 @@ const TestEditor = () => {
 
 window.addEventListener("load", () => {
   const editor = React.createElement(TestEditor);
-  const root = document.createElement("div");
-  document.body.appendChild(root);
+  const rootElement = document.createElement("div");
+  document.body.appendChild(rootElement);
 
-  ReactDOM.render(editor, root);
+  const root = createRoot(rootElement);
+  root.render(editor);
 });
