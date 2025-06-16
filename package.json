@@ -33,7 +33,9 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "tsconfig.json"
   ],
   "author": "Nat Budin <natbudin@gmail.com>",
   "license": "MIT",
