@@ -1,5 +1,5 @@
 {
-  "name": "react-blockly",
+  "name": "@kuband/react-blockly",
   "version": "10.0.0",
   "type": "module",
   "description": "A React wrapper for the Blockly visual programming editor",
@@ -40,40 +40,40 @@
   "author": "Nat Budin <natbudin@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "blockly": ">=12.1.0",
+    "blockly": ">=12.3.1",
     "prop-types": "^15.8.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
     "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
-    "@types/node": "^24.0.1",
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^24.9.1",
     "@types/prop-types": "^15.7.15",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@typescript-eslint/eslint-plugin": "^8.34.0",
-    "@typescript-eslint/parser": "^8.34.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
     "css-loader": "^7.1.2",
-    "eslint": "^9.29.0",
-    "eslint-config-prettier": "^10.1.5",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "html-webpack-plugin": "^5.6.3",
-    "mini-css-extract-plugin": "^2.9.2",
-    "prettier": "^3.4.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "ts-loader": "^9.5.2",
-    "webpack": "^5.99.9",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "prettier": "^3.6.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nbudin/react-blockly/"
+    "url": "git+https://github.com/JakubAndrysek/react-blockly.git"
   },
   "packageManager": "yarn@3.4.1"
 }
